@@ -36,7 +36,7 @@ You need  a few parts:
 
 ```bash
 sudo apt-get update
-sudo apt-get install git python-dev python-smbus i2c-tools python-rpi.gpio python3-rpi.gpio libxml2-dev libxslt1-dev python-shapely
+sudo apt-get install git python-dev python-smbus geos i2c-tools python-rpi.gpio python3-rpi.gpio libxml2-dev libxslt1-dev python-shapely
 # Follow instructions to install i2c kernel support:
 #   https://learn.adafruit.com/adafruits-raspberry-pi-lesson-4-gpio-setup/configuring-i2c
 git clone https://github.com/nioinnovation/Adafruit_Python_GPIO.git
@@ -51,7 +51,7 @@ python3 -m RPiNWR.demo --transmitter WXL58
 ```
 
 You can specify the transmitter or not, but if you do and the 
-transmitter is listed in nwr_data.py, error correction is 
+transmitter is listed in nwr\_data.py, error correction is 
 more robust.  
 
 See demo.py and its tests for information about command line options.

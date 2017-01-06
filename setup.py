@@ -10,6 +10,20 @@ with open('README.md') as f:
 with open('LICENSE') as f:
     license = f.read()
 
+runtime = {
+    'pytest-runner',
+    'urllib3',
+    'Shapely',
+    'smbus2',
+    'iso8601',
+}
+
+develop = {
+    'flake8',
+    'mock',
+    'pytest',
+}
+
 setup(
     name='RPiNWR',
     version='0.0.1',
@@ -27,7 +41,11 @@ setup(
     # dependency_links=[
     #   'git+https://github.com/nioinnovation/Adafruit_Python_GPIO.git'
     # ],
-    setup_requires=['pytest-runner', 'urllib3', 'shapely', 'iso8601'],
-    tests_require=['pytest'],
+    setup_requires=list(runtime),
+    install_requires=list(runtime),
+    extras_require={
+        'develop': list(runtime | develop),
+    },
+    tests_require=['pytest', 'mock'],
     test_suite="tests",
 )
